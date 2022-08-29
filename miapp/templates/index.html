@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Inicio de
+{% endblock title %}
+
+
+{% block content %}
+
+{% comment "nota para el comentario" %}
+
+Este bloque es referente al contenido
+
+{% endcomment %}
+
+<h1 class="title">{{title}}</h1>
+
+{{mi_variable}}
+
+{% if nombre and nombre == 'kikeplay' %}
+<p>{{nombre}}</p>
+{% else %}
+<strong>el nombre no existe</strong>
+{% endif %}
+<hr>
+<h3>Listado de lenguajes de programacion interesantes</h3>
+<ul >
+    {% for lenguajes in lenguajes %}
+    <li id="listado_lenguajes">
+        {{forloop.counter}}. {{lenguajes}}
+    </li>
+    {% empty %}
+    <p>NO HAY ELEMENTOS PARA MOSTRAR</p>
+    {% endfor %}
+</ul>
+
+{% include 'fecha_actual.html' with saludo='Hola mundo desde template' %}
+
+{% endblock content %}

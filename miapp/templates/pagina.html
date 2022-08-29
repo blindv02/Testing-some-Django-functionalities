@@ -1,0 +1,29 @@
+{%extends 'layout.html'%}
+{% load filters %}
+
+{% block title %}
+Pagina
+{% endblock title %}
+
+{%block content%}
+
+<h1 class="title">pagina de mi web</h1>
+<p>{{ "creado por enrique rodriguez"|cut:" " }}</p>
+
+<p>{{texto|default:'no hay nada'}}</p>
+
+<p>{{lista|first}}</p>
+
+<p>{{lista|random}}</p>
+
+<p>{{lista|join:', '}}</p>
+
+<p>{{'texto de pruebas'|upper}}</p>
+
+<p>{{'texto de pruebas'|upper}}</p>
+
+{{'<h1>texto</h1> <strong>pruebas</strong>'|striptags|wordcount}}
+
+{{'Kikeplay'|saludo|safe}}
+
+{% endblock %}

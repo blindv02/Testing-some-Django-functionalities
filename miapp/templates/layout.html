@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-3">
+    <title>
+        {%block title%}
+        <!--Titulo de cada pagina-->
+        {%endblock%}
+         kike
+        </title>
+{% load filters %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static "style.css" %}" />
+</head>
+
+<body>
+
+  <header>
+    <div id="logotipo">
+      <!-- logo django -->
+      <img src="{% static "images/logo.png" %}">
+      <h1>Sitio web de kikeplay</h1>
+    </div>
+  </header>
+<nav>
+
+  <ul>
+      <li>
+          <a href={% url 'inicio' %}>Inicio</a>
+      </li>
+      <li>
+          <a href={% url 'hola_mundo' %}>Hola mundo</a>
+      </li>
+      <li>
+          <a href={% url 'page' %}>pagina de pruebas</a>
+      </li>
+      <li>
+          <a href={% url 'contacto' 'Kike' 'Rodriguez' %}>contacto</a>
+      </li>
+  </ul>
+</nav>
+<div class="barra">
+  <span class="esquina-izquierda"></span>
+  <span class="relleno-barra"></span>
+  <span class="esquina-derecha"></span>
+</div>
+
+<div id="content">
+  <div class="box">
+      {%block content%}
+          <!--Codigo que viene de templates-->
+          <strong>contenido original del bloque</strong>
+      {%endblock%}
+  </div>
+</div>
+
+    <footer>
+        master en python &copy; Enrique Rodriguez - {% now "d/m/Y" %}
+    </footer>
+
+</body>
+</html>
